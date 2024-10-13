@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/models/applied_jobs_model.dart';
-import 'package:job_nect/screens/job_details_screen.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/widgets/chip_text.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
+import 'package:eservices/models/applied_jobs_model.dart';
+import 'package:eservices/screens/job_details_screen.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/widgets/chip_text.dart';
+import 'package:eservices/widgets/my_network_image.dart';
 
 import '../screens/company_profile/company_details_screen.dart';
 import '../utils/app_colors.dart';
@@ -70,7 +70,7 @@ class JobCardShort extends StatelessWidget {
                             border: Border.all(
                                 color: colorPrimary.withOpacity(0.1),
                                 width: 1.2)),
-                        child: MyNetworkImage(
+                        child: MyImage(
                             imageUrl: job?.companyLogo ?? '',
                             height: 30.h,
                             width: 30.w),

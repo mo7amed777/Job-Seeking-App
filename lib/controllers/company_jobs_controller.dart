@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:job_nect/models/company_jobs_model.dart';
-import 'package:job_nect/services/urls.dart';
+import 'package:eservices/models/company_jobs_model.dart';
+import 'package:eservices/services/urls.dart';
 
 import '../models/job_model.dart';
 import '../services/api_caller.dart';

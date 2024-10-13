@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/resume_details_controller.dart';
-import 'package:job_nect/models/resume_model.dart';
+import 'package:eservices/controllers/resume_details_controller.dart';
+import 'package:eservices/models/resume_model.dart';
 
 import '../../controllers/edit_resume_controller.dart';
 import '../../controllers/local_text_controller.dart';
@@ -58,31 +58,38 @@ class _EditLanguageState extends State<EditLanguage> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("${terms?.reading ?? "Reading"}: ${lang?.reading}",
+                                Text(
+                                    "${terms?.reading ?? "Reading"}: ${lang?.reading}",
                                     style: appTextStyleBlack),
-                                Text("${terms?.writing ?? "Writing"}: ${lang?.writing}",
+                                Text(
+                                    "${terms?.writing ?? "Writing"}: ${lang?.writing}",
                                     style: appTextStyleBlack),
-                                Text("${terms?.speaking ?? "Speaking"}: ${lang?.speaking}",
+                                Text(
+                                    "${terms?.speaking ?? "Speaking"}: ${lang?.speaking}",
                                     style: appTextStyleBlack),
                                 Row(
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.all(8),
                                       child: InkWell(
-                                        child: const Icon(Icons.edit, color: colorPrimary),
+                                        child: const Icon(Icons.edit,
+                                            color: colorPrimary),
                                         onTap: () {
-                                          nameController.text = lang?.name ?? '';
+                                          nameController.text =
+                                              lang?.name ?? '';
                                           readingValue = lang?.reading ?? '';
                                           writingValue = lang?.writing ?? '';
                                           speakingValue = lang?.speaking ?? '';
-                                          showAddOrUpdateModal(context, true, lang?.id);
+                                          showAddOrUpdateModal(
+                                              context, true, lang?.id);
                                         },
                                       ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.all(8),
                                       child: InkWell(
-                                        child: const Icon(Icons.delete, color: colorRed),
+                                        child: const Icon(Icons.delete,
+                                            color: colorRed),
                                         onTap: () async {
                                           deleteLanguage(context, lang?.id);
                                         },
@@ -175,7 +182,9 @@ class _EditLanguageState extends State<EditLanguage> {
                     CustomButton(
                       text: terms?.saveAndContinue ?? "Save & Continue",
                       onTap: () async {
-                        isUpdating ?? false ? await updateLanguage(id) : await addLanguage();
+                        isUpdating ?? false
+                            ? await updateLanguage(id)
+                            : await addLanguage();
                       },
                     ),
                   ],
@@ -239,14 +248,17 @@ class _EditLanguageState extends State<EditLanguage> {
           title: const Text("Are you sure to delete?", style: appTitleStyle),
           content: Row(
             children: [
-              Expanded(child: CustomButton(text: terms?.no ?? "No", onTap: () => Get.back())),
+              Expanded(
+                  child: CustomButton(
+                      text: terms?.no ?? "No", onTap: () => Get.back())),
               const SizedBox(width: 16),
               Expanded(
                 child: CustomButton(
                   text: terms?.yes ?? "Yes",
                   onTap: () async {
                     UiHelper.loadingIndicator();
-                    final response = await Get.find<EditResumeController>().deleteLanguage(id: id);
+                    final response = await Get.find<EditResumeController>()
+                        .deleteLanguage(id: id);
                     Get.back();
                     Get.back();
                     if (response) {
@@ -254,7 +266,8 @@ class _EditLanguageState extends State<EditLanguage> {
                       //controller.removeExp(exp?.id);
                       UiHelper.showSnackBar(text: "Deleted Successfully");
                     } else {
-                      UiHelper.showSnackBar(text: "Something went wrong", error: true);
+                      UiHelper.showSnackBar(
+                          text: "Something went wrong", error: true);
                     }
                   },
                 ),

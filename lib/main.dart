@@ -1,40 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/companies_controller.dart';
-import 'package:job_nect/controllers/filter_jobs_controller.dart';
-import 'package:job_nect/controllers/notification_controller.dart';
-import 'package:job_nect/controllers/app_text_controller.dart';
-import 'package:job_nect/controllers/applied_jobs_controller.dart';
-import 'package:job_nect/controllers/apply_job_controller.dart';
-import 'package:job_nect/controllers/auth_controller.dart';
-import 'package:job_nect/controllers/bookmark_jobs_controller.dart';
-import 'package:job_nect/controllers/bottom_nav_controller.dart';
-import 'package:job_nect/controllers/categories_filter_controller.dart';
-import 'package:job_nect/controllers/categories_controller.dart';
-import 'package:job_nect/controllers/company_details_controller.dart';
-import 'package:job_nect/controllers/company_jobs_controller.dart';
-import 'package:job_nect/controllers/designation_controller.dart';
-import 'package:job_nect/controllers/edit_resume_controller.dart';
-import 'package:job_nect/controllers/education_levels_controller.dart';
-import 'package:job_nect/controllers/job_details_controller.dart';
-import 'package:job_nect/controllers/job_levels_controller.dart';
-import 'package:job_nect/controllers/job_types_controller.dart';
-import 'package:job_nect/controllers/job_types_filter_controller.dart';
-import 'package:job_nect/controllers/language_controller.dart';
-import 'package:job_nect/controllers/latest_jobs_controller.dart';
-import 'package:job_nect/controllers/local_settings_controller.dart';
-import 'package:job_nect/controllers/local_text_controller.dart';
-import 'package:job_nect/controllers/login_controller.dart';
-import 'package:job_nect/controllers/reset_pass_controller.dart';
-import 'package:job_nect/controllers/resume_details_controller.dart';
-import 'package:job_nect/controllers/setting_controller.dart';
-import 'package:job_nect/controllers/signup_controller.dart';
-import 'package:job_nect/controllers/slider_controller.dart';
-import 'package:job_nect/controllers/update_image_controller.dart';
-import 'package:job_nect/controllers/update_profile_controller.dart';
-import 'package:job_nect/screens/onboarding_screens/splash_screen.dart';
-import 'package:job_nect/utils/app_theme.dart';
+import 'package:eservices/controllers/companies_controller.dart';
+import 'package:eservices/controllers/filter_jobs_controller.dart';
+import 'package:eservices/controllers/notification_controller.dart';
+import 'package:eservices/controllers/app_text_controller.dart';
+import 'package:eservices/controllers/applied_jobs_controller.dart';
+import 'package:eservices/controllers/apply_job_controller.dart';
+import 'package:eservices/controllers/auth_controller.dart';
+import 'package:eservices/controllers/bookmark_jobs_controller.dart';
+import 'package:eservices/controllers/bottom_nav_controller.dart';
+import 'package:eservices/controllers/categories_filter_controller.dart';
+import 'package:eservices/controllers/categories_controller.dart';
+import 'package:eservices/controllers/company_details_controller.dart';
+import 'package:eservices/controllers/company_jobs_controller.dart';
+import 'package:eservices/controllers/designation_controller.dart';
+import 'package:eservices/controllers/edit_resume_controller.dart';
+import 'package:eservices/controllers/education_levels_controller.dart';
+import 'package:eservices/controllers/job_details_controller.dart';
+import 'package:eservices/controllers/job_levels_controller.dart';
+import 'package:eservices/controllers/job_types_controller.dart';
+import 'package:eservices/controllers/job_types_filter_controller.dart';
+import 'package:eservices/controllers/language_controller.dart';
+import 'package:eservices/controllers/latest_jobs_controller.dart';
+import 'package:eservices/controllers/local_settings_controller.dart';
+import 'package:eservices/controllers/local_text_controller.dart';
+import 'package:eservices/controllers/login_controller.dart';
+import 'package:eservices/controllers/reset_pass_controller.dart';
+import 'package:eservices/controllers/resume_details_controller.dart';
+import 'package:eservices/controllers/setting_controller.dart';
+import 'package:eservices/controllers/signup_controller.dart';
+import 'package:eservices/controllers/slider_controller.dart';
+import 'package:eservices/controllers/update_image_controller.dart';
+import 'package:eservices/controllers/update_profile_controller.dart';
+import 'package:eservices/screens/onboarding_screens/splash_screen.dart';
+import 'package:eservices/utils/app_theme.dart';
 
 import 'controllers/popular_jobs_controller.dart';
 
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'JobNect',
+          title: 'NBU E-Services',
           theme: appThemeData,
           initialBinding: ControllerBindings(),
           home: const SplashScreen(),

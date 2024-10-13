@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:job_nect/utils/app_colors.dart';
+import 'package:eservices/utils/app_colors.dart';
 
 class InputFieldWhite extends StatefulWidget {
   final String hintText;
@@ -51,7 +51,9 @@ class _InputFieldWhiteState extends State<InputFieldWhite> {
                   obscureText = !obscureText;
                   setState(() {});
                 },
-                icon: Icon(obscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined))
+                icon: Icon(obscureText
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined))
             : widget.suffixIcon,
       ),
     );

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
 
 import '../../controllers/edit_resume_controller.dart';
 import '../../controllers/local_text_controller.dart';
@@ -57,37 +57,48 @@ class _WorkExperienceState extends State<WorkExperience> {
                 itemBuilder: (context, index) {
                   var exp = resume?.experiences?[index];
                   return BulletTextTitled(
-                    title: resume?.experiences?[index].business ?? "Company Name",
+                    title:
+                        resume?.experiences?[index].business ?? "Company Name",
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("${exp?.designation} (${exp?.startDate} - ${exp?.endDate})",
+                        Text(
+                            "${exp?.designation} (${exp?.startDate} - ${exp?.endDate})",
                             style: appTextStyleBlack),
                         //Text("UI/UX Designer (Jan 2023-Feb 2024)", style: appTextStyleBlack),
-                        Text("${terms?.address ?? "Address"}: ${exp?.location}", style: appTextStyleBlack),
+                        Text("${terms?.address ?? "Address"}: ${exp?.location}",
+                            style: appTextStyleBlack),
                         Row(
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(8),
                               child: InkWell(
-                                child: const Icon(Icons.edit, color: colorPrimary),
+                                child:
+                                    const Icon(Icons.edit, color: colorPrimary),
                                 onTap: () {
-                                  companyNameController.text = exp?.business ?? '';
+                                  companyNameController.text =
+                                      exp?.business ?? '';
                                   employerController.text = exp?.employer ?? '';
-                                  designationController.text = exp?.designation ?? '';
-                                  durationController.text = "${exp?.startDate} - ${exp?.endDate}" ?? '';
+                                  designationController.text =
+                                      exp?.designation ?? '';
+                                  durationController.text =
+                                      "${exp?.startDate} - ${exp?.endDate}" ??
+                                          '';
                                   selectedDateRange = DateTimeRange(
-                                      start: DateTime.parse(exp?.startDate ?? ''),
+                                      start:
+                                          DateTime.parse(exp?.startDate ?? ''),
                                       end: DateTime.parse(exp?.endDate ?? ''));
                                   addressController.text = exp?.location ?? '';
-                                  showAddOrUpdateModal(context, true, resume?.experiences?[index].id);
+                                  showAddOrUpdateModal(context, true,
+                                      resume?.experiences?[index].id);
                                 },
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8),
                               child: InkWell(
-                                child: const Icon(Icons.delete, color: colorRed),
+                                child:
+                                    const Icon(Icons.delete, color: colorRed),
                                 onTap: () async {
                                   deleteExperience(context, exp);
                                 },
@@ -125,14 +136,17 @@ class _WorkExperienceState extends State<WorkExperience> {
           title: Text("Are you sure to delete?", style: appTitleStyle),
           content: Row(
             children: [
-              Expanded(child: CustomButton(text: terms?.no ?? "No", onTap: () => Get.back())),
+              Expanded(
+                  child: CustomButton(
+                      text: terms?.no ?? "No", onTap: () => Get.back())),
               const SizedBox(width: 16),
               Expanded(
                 child: CustomButton(
                   text: terms?.yes ?? "Yes",
                   onTap: () async {
                     UiHelper.loadingIndicator();
-                    final response = await Get.find<EditResumeController>().deleteExperience(id: exp?.id);
+                    final response = await Get.find<EditResumeController>()
+                        .deleteExperience(id: exp?.id);
                     Get.back();
                     Get.back();
                     if (response) {
@@ -140,7 +154,8 @@ class _WorkExperienceState extends State<WorkExperience> {
                       //controller.removeExp(exp?.id);
                       UiHelper.showSnackBar(text: "Deleted Successfully");
                     } else {
-                      UiHelper.showSnackBar(text: "Something went wrong", error: true);
+                      UiHelper.showSnackBar(
+                          text: "Something went wrong", error: true);
                     }
                   },
                 ),
@@ -173,7 +188,8 @@ class _WorkExperienceState extends State<WorkExperience> {
                         controller: companyNameController,
                         validator: ValidatorClass().validateEmptyField,
                         title: terms?.organizationName ?? "Organization Name",
-                        hintText: terms?.organizationName ?? "enter organization"),
+                        hintText:
+                            terms?.organizationName ?? "enter organization"),
                     SizedBox(height: 8.h),
                     TitledInputFilled(
                         controller: employerController,
@@ -210,7 +226,8 @@ class _WorkExperienceState extends State<WorkExperience> {
                             : "select duration",
                         suffixIcon: IconButton(
                           onPressed: () {},
-                          icon: SvgPicture.asset(calender, color: colorBlackLight),
+                          icon: SvgPicture.asset(calender,
+                              color: colorBlackLight),
                         ),
                       ),
                     ),
@@ -224,9 +241,13 @@ class _WorkExperienceState extends State<WorkExperience> {
                     // if (index < (resume?.experiences?.length ?? 0) - 1) const Divider(),
                     // const SizedBox(height: 20),
                     CustomButton(
-                      text: terms?.saveAndContinue ?? terms?.saveAndContinue ?? "Save & Continue",
+                      text: terms?.saveAndContinue ??
+                          terms?.saveAndContinue ??
+                          "Save & Continue",
                       onTap: () async {
-                        isUpdating ?? false ? await updateExperience(id) : await addExperience();
+                        isUpdating ?? false
+                            ? await updateExperience(id)
+                            : await addExperience();
                       },
                     ),
                   ],

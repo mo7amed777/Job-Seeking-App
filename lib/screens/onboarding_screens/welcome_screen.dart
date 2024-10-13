@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/screens/auth_screens/login_screen.dart';
-import 'package:job_nect/screens/auth_screens/signup_company_screen.dart';
-import 'package:job_nect/screens/auth_screens/signup_user_screen.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/appbar_back_button.dart';
-import 'package:job_nect/widgets/body_widget.dart';
+import 'package:eservices/screens/auth_screens/login_screen.dart';
+import 'package:eservices/screens/auth_screens/signup_company_screen.dart';
+import 'package:eservices/screens/auth_screens/signup_user_screen.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/appbar_back_button.dart';
+import 'package:eservices/widgets/body_widget.dart';
 
 import '../../controllers/local_text_controller.dart';
 import '../../models/app_text_model.dart';

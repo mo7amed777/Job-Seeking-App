@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:job_nect/utils/app_colors.dart';
+import 'package:eservices/utils/app_colors.dart';
 
 class InputFieldWhiteNew extends StatefulWidget {
   final String hintText;

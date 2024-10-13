@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:job_nect/utils/ui_helper.dart';
+import 'package:eservices/utils/ui_helper.dart';
 
 import '../services/urls.dart';
 import 'auth_controller.dart';

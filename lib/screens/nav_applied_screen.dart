@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/applied_jobs_controller.dart';
-import 'package:job_nect/models/applied_jobs_model.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/chip_text.dart';
-import 'package:job_nect/widgets/job_card_short.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/controllers/applied_jobs_controller.dart';
+import 'package:eservices/models/applied_jobs_model.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/chip_text.dart';
+import 'package:eservices/widgets/job_card_short.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 import '../controllers/bottom_nav_controller.dart';
 import '../controllers/local_text_controller.dart';

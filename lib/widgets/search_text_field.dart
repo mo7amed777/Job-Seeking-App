@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/screens/filter_screen.dart';
+import 'package:eservices/screens/filter_screen.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
@@ -55,7 +55,7 @@ class SearchTextField extends StatelessWidget {
                 contentPadding: EdgeInsets.only(bottom: 3.h),
                 border: InputBorder.none,
               ),
-                onSubmitted: (_) => onSearch(),
+              onSubmitted: (_) => onSearch(),
             ),
           ),
           FilledIconButton(

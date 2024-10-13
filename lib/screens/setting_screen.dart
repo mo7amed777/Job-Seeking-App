@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/app_text_controller.dart';
-import 'package:job_nect/controllers/language_controller.dart';
-import 'package:job_nect/controllers/local_text_controller.dart';
-import 'package:job_nect/models/app_text_model.dart';
-import 'package:job_nect/models/languages_model.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/controllers/app_text_controller.dart';
+import 'package:eservices/controllers/language_controller.dart';
+import 'package:eservices/controllers/local_text_controller.dart';
+import 'package:eservices/models/app_text_model.dart';
+import 'package:eservices/models/languages_model.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -23,15 +23,17 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   bool notification = true;
   bool darkMode = true;
-  static List<Language> appLanguages = Get.find<LanguageController>().languages?.reversed.toList() ?? [];
+  static List<Language> appLanguages =
+      Get.find<LanguageController>().languages?.reversed.toList() ?? [];
   Language selectedLanguage = appLanguages.first;
 
   @override
   Widget build(BuildContext context) {
     Terms? terms = LocalTextController.terms;
     return Scaffold(
-      appBar:
-          AppBar(automaticallyImplyLeading: false, title: TextBackButton(text: terms?.setting ?? "Setting")),
+      appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: TextBackButton(text: terms?.setting ?? "Setting")),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -50,7 +52,8 @@ class _SettingScreenState extends State<SettingScreen> {
                     value: selectedLanguage,
                     onChanged: (Language? value) async {
                       selectedLanguage = value!;
-                      final res = await controller.getAppTexts(selectedLanguage.code);
+                      final res =
+                          await controller.getAppTexts(selectedLanguage.code);
                       setState(() {});
                     },
                     items: List.generate(

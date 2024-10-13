@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:job_nect/models/education_level_model.dart';
-import 'package:job_nect/services/urls.dart';
+import 'package:eservices/models/education_level_model.dart';
+import 'package:eservices/services/urls.dart';
 
 import '../services/api_caller.dart';
 
@@ -14,7 +14,8 @@ class EducationLevelsController extends GetxController {
     update();
     final response = await ApiCaller().getRequest(Urls.educationLevels);
     if (response.isSuccess) {
-      educationLevelsModel = EducationLevelsModel.fromJson(response.responseData);
+      educationLevelsModel =
+          EducationLevelsModel.fromJson(response.responseData);
     } else {}
     loading = false;
     update();

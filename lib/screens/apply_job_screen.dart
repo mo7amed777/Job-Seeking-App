@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/apply_job_controller.dart';
-import 'package:job_nect/models/job_model.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/utils/ui_helper.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/custom_button.dart';
-import 'package:job_nect/widgets/dotted_cv_upload.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
-import 'package:job_nect/widgets/titled_input_field.dart';
+import 'package:eservices/controllers/apply_job_controller.dart';
+import 'package:eservices/models/job_model.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/utils/ui_helper.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/custom_button.dart';
+import 'package:eservices/widgets/dotted_cv_upload.dart';
+import 'package:eservices/widgets/text_back_button.dart';
+import 'package:eservices/widgets/titled_input_field.dart';
 
 import '../utils/app_text_styles.dart';
 

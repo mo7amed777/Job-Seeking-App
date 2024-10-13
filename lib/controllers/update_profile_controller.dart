@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:job_nect/controllers/update_image_controller.dart';
-import 'package:job_nect/utils/ui_helper.dart';
+import 'package:eservices/controllers/update_image_controller.dart';
+import 'package:eservices/utils/ui_helper.dart';
 
 import '../models/user.dart';
 import '../services/api_caller.dart';

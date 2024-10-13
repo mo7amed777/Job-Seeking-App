@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/utils/ui_helper.dart';
+import 'package:eservices/utils/ui_helper.dart';
 
 import '../services/api_caller.dart';
 import '../services/urls.dart';

@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/auth_controller.dart';
-import 'package:job_nect/controllers/education_levels_controller.dart';
-import 'package:job_nect/controllers/job_levels_controller.dart';
-import 'package:job_nect/controllers/job_types_controller.dart';
-import 'package:job_nect/controllers/resume_details_controller.dart';
-import 'package:job_nect/models/resume_model.dart';
-import 'package:job_nect/models/user.dart';
-import 'package:job_nect/screens/edit_resume/edit_resume_screen.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/bordered_container.dart';
-import 'package:job_nect/widgets/bullet_text_titled.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/controllers/auth_controller.dart';
+import 'package:eservices/controllers/education_levels_controller.dart';
+import 'package:eservices/controllers/job_levels_controller.dart';
+import 'package:eservices/controllers/job_types_controller.dart';
+import 'package:eservices/controllers/resume_details_controller.dart';
+import 'package:eservices/models/resume_model.dart';
+import 'package:eservices/models/user.dart';
+import 'package:eservices/screens/edit_resume/edit_resume_screen.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/bordered_container.dart';
+import 'package:eservices/widgets/bullet_text_titled.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 import '../controllers/local_text_controller.dart';
 import '../models/app_text_model.dart';
@@ -109,12 +109,15 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
           SizedBox(
               height: 100.h,
               width: 100.w,
-              child: Image.network(resume?.profilePhoto ?? '', fit: BoxFit.cover)),
+              child:
+                  Image.network(resume?.profilePhoto ?? '', fit: BoxFit.cover)),
           SizedBox(height: 8.h),
-          Text(resume?.name ?? "Applicant Name", style: mediumTitleStyle.copyWith(fontSize: 20)),
+          Text(resume?.name ?? "Applicant Name",
+              style: mediumTitleStyle.copyWith(fontSize: 20)),
           SizedBox(height: 8.h),
           Text(resume?.email ?? "Applicant Email", style: appTextStyleBlack),
-          Text("${terms?.phone ?? "Phone"}: ${resume?.phone}", style: appTextStyleBlack),
+          Text("${terms?.phone ?? "Phone"}: ${resume?.phone}",
+              style: appTextStyleBlack),
           //Text("Address: ${user?.}", style: appTextStyleBlack, textAlign: TextAlign.center),
         ],
       ),
@@ -124,7 +127,8 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
   BorderedContainer careerObjective(Resume? resume) {
     return BorderedContainer(
       title: terms?.careerObjective ?? "Career Objective",
-      body: Text(resume?.careerObjective ?? "Career Description", style: appTextStyleBlack),
+      body: Text(resume?.careerObjective ?? "Career Description",
+          style: appTextStyleBlack),
     );
   }
 
@@ -138,8 +142,11 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
           //   BulletText(text: "Microsoft Office", textStyle: appTextStyleBlack),
           //   BulletText(text: "Figma", textStyle: appTextStyleBlack),
           // ],
-          children: List.generate(resume?.skills?.length ?? 0,
-              (index) => BulletText(text: resume?.skills?[index] ?? 'skill', textStyle: appTextStyleBlack))),
+          children: List.generate(
+              resume?.skills?.length ?? 0,
+              (index) => BulletText(
+                  text: resume?.skills?[index] ?? 'skill',
+                  textStyle: appTextStyleBlack))),
     );
   }
 
@@ -151,15 +158,29 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // colonText(key: "Name", value: info?.name ?? "Desio Talukder"),
-          colonText(key: terms?.fathersName ?? "Father's Name", value: info?.fatherName ?? ''),
-          colonText(key: terms?.mothersName ?? "Mother's Name", value: info?.motherName ?? ''),
-          colonText(key: terms?.dateOfBirth ?? "Date of Birth", value: info?.dateOfBirth ?? ''),
+          colonText(
+              key: terms?.fathersName ?? "Father's Name",
+              value: info?.fatherName ?? ''),
+          colonText(
+              key: terms?.mothersName ?? "Mother's Name",
+              value: info?.motherName ?? ''),
+          colonText(
+              key: terms?.dateOfBirth ?? "Date of Birth",
+              value: info?.dateOfBirth ?? ''),
           colonText(key: terms?.gender ?? "Gender", value: info?.gender ?? ''),
-          colonText(key: terms?.maritalStatus ?? "Marital Status", value: info?.maritalStatus ?? ''),
-          colonText(key: terms?.nationality ?? "Nationality", value: info?.nationality ?? ''),
+          colonText(
+              key: terms?.maritalStatus ?? "Marital Status",
+              value: info?.maritalStatus ?? ''),
+          colonText(
+              key: terms?.nationality ?? "Nationality",
+              value: info?.nationality ?? ''),
           // colonText(key: "Religion", value: info?.fatherName ?? "Islam"),
-          colonText(key: terms?.presentAddress ?? "Present Address", value: info?.presentAddress ?? ''),
-          colonText(key: terms?.permanentAddress ?? "Permanent Address", value: info?.permanentAddress ?? ''),
+          colonText(
+              key: terms?.presentAddress ?? "Present Address",
+              value: info?.presentAddress ?? ''),
+          colonText(
+              key: terms?.permanentAddress ?? "Permanent Address",
+              value: info?.permanentAddress ?? ''),
         ],
       ),
     );
@@ -184,7 +205,8 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
                     Text(
                         "${terms?.designation ?? "Designation"}: ${exp?.designation} (${exp?.startDate} - ${exp?.startDate})",
                         style: appTextStyleBlack),
-                    Text("${terms?.address ?? "Address"}: ${exp?.location}", style: appTextStyleBlack),
+                    Text("${terms?.address ?? "Address"}: ${exp?.location}",
+                        style: appTextStyleBlack),
                   ],
                 ),
               );
@@ -211,12 +233,17 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("${terms?.institute ?? "Institute"}: ${education?.institute}",
+                    Text(
+                        "${terms?.institute ?? "Institute"}: ${education?.institute}",
                         style: appTextStyleBlack),
-                    Text("${terms?.major ?? "Major"}: ${education?.major}", style: appTextStyleBlack),
-                    Text("${terms?.exam ?? "Exam"}: ${education?.exam}", style: appTextStyleBlack),
-                    Text("${terms?.result ?? "Result"}: ${education?.result}", style: appTextStyleBlack),
-                    Text("${terms?.passingYear ?? "Passing Year"}: ${education?.endDate}",
+                    Text("${terms?.major ?? "Major"}: ${education?.major}",
+                        style: appTextStyleBlack),
+                    Text("${terms?.exam ?? "Exam"}: ${education?.exam}",
+                        style: appTextStyleBlack),
+                    Text("${terms?.result ?? "Result"}: ${education?.result}",
+                        style: appTextStyleBlack),
+                    Text(
+                        "${terms?.passingYear ?? "Passing Year"}: ${education?.endDate}",
                         style: appTextStyleBlack),
                   ],
                 ),
@@ -244,10 +271,15 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Institute: ${training?.institute}", style: appTextStyleBlack),
-                    Text("Topics: ${training?.topics}", style: appTextStyleBlack),
-                    Text("Location: ${training?.location}", style: appTextStyleBlack),
-                    Text("Duration: ${training?.startDate} - ${training?.endDate}", style: appTextStyleBlack),
+                    Text("Institute: ${training?.institute}",
+                        style: appTextStyleBlack),
+                    Text("Topics: ${training?.topics}",
+                        style: appTextStyleBlack),
+                    Text("Location: ${training?.location}",
+                        style: appTextStyleBlack),
+                    Text(
+                        "Duration: ${training?.startDate} - ${training?.endDate}",
+                        style: appTextStyleBlack),
                   ],
                 ),
               );
@@ -276,7 +308,8 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
                   children: [
                     Text("Reading: ${lang?.reading}", style: appTextStyleBlack),
                     Text("Writing: ${lang?.writing}", style: appTextStyleBlack),
-                    Text("Speaking: ${lang?.speaking}", style: appTextStyleBlack),
+                    Text("Speaking: ${lang?.speaking}",
+                        style: appTextStyleBlack),
                   ],
                 ),
               );
@@ -328,13 +361,24 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              colonText(key: terms?.name ?? "Name", value: reference?.name ?? ""),
-              colonText(key: terms?.organization ?? "Organization", value: reference?.organization ?? ""),
-              colonText(key: terms?.designation ?? "Designation", value: reference?.designation ?? ""),
-              colonText(key: terms?.address ?? "Address", value: reference?.address ?? ""),
-              colonText(key: terms?.phone ?? "Phone", value: reference?.phone ?? ""),
-              colonText(key: terms?.email ?? "Email", value: reference?.email ?? ""),
-              colonText(key: terms?.relation ?? "Relation", value: reference?.relation ?? ""),
+              colonText(
+                  key: terms?.name ?? "Name", value: reference?.name ?? ""),
+              colonText(
+                  key: terms?.organization ?? "Organization",
+                  value: reference?.organization ?? ""),
+              colonText(
+                  key: terms?.designation ?? "Designation",
+                  value: reference?.designation ?? ""),
+              colonText(
+                  key: terms?.address ?? "Address",
+                  value: reference?.address ?? ""),
+              colonText(
+                  key: terms?.phone ?? "Phone", value: reference?.phone ?? ""),
+              colonText(
+                  key: terms?.email ?? "Email", value: reference?.email ?? ""),
+              colonText(
+                  key: terms?.relation ?? "Relation",
+                  value: reference?.relation ?? ""),
             ],
           );
         },
@@ -348,7 +392,8 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(child: Text(key, style: appTextStyleBlack)),
-        Text(" :  ", style: appTextStyleBlack.copyWith(fontWeight: FontWeight.bold)),
+        Text(" :  ",
+            style: appTextStyleBlack.copyWith(fontWeight: FontWeight.bold)),
         Expanded(child: Text(value, style: appTextStyleBlack)),
       ],
     );
@@ -364,7 +409,9 @@ class _ViewResumeScreenState extends State<ViewResumeScreen> {
   Padding tableTitle(text) {
     return Padding(
       padding: const EdgeInsets.all(5),
-      child: Text(text, style: appTextStyleBlack.copyWith(fontSize: 15, fontWeight: FontWeight.bold)),
+      child: Text(text,
+          style: appTextStyleBlack.copyWith(
+              fontSize: 15, fontWeight: FontWeight.bold)),
     );
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/company_details_controller.dart';
-import 'package:job_nect/controllers/company_jobs_controller.dart';
-import 'package:job_nect/models/company_details_model.dart';
-import 'package:job_nect/screens/company_profile/company_available_jobs.dart';
-import 'package:job_nect/screens/company_profile/company_overview.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
+import 'package:eservices/controllers/company_details_controller.dart';
+import 'package:eservices/controllers/company_jobs_controller.dart';
+import 'package:eservices/models/company_details_model.dart';
+import 'package:eservices/screens/company_profile/company_available_jobs.dart';
+import 'package:eservices/screens/company_profile/company_overview.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/my_network_image.dart';
 
 import '../../controllers/local_text_controller.dart';
 import '../../models/app_text_model.dart';
@@ -99,14 +99,17 @@ class _CompanyDetailsScreenState extends State<CompanyDetailsScreen> {
                 height: 45.h,
                 duration: const Duration(milliseconds: 200),
                 curve: Curves.easeIn,
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                margin: EdgeInsets.only(right: index == 0 ? 8.w : 0, left: index == 1 ? 8.w : 0),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                margin: EdgeInsets.only(
+                    right: index == 0 ? 8.w : 0, left: index == 1 ? 8.w : 0),
                 decoration: BoxDecoration(
                     color: selected ? colorPrimary : colorPrimaryLighter,
                     borderRadius: BorderRadius.circular(8)),
                 child: Center(
                   child: Text(tabs[index],
-                      style: appTitleStyle.copyWith(color: selected ? colorWhite : colorPrimary)),
+                      style: appTitleStyle.copyWith(
+                          color: selected ? colorWhite : colorPrimary)),
                 ),
               ),
             ),
@@ -141,14 +144,18 @@ class _CompanyDetailsScreenState extends State<CompanyDetailsScreen> {
               width: 80.w,
               clipBehavior: Clip.antiAlias,
               //padding: const EdgeInsets.all(3),
-              decoration: const BoxDecoration(shape: BoxShape.circle, color: colorWhite),
-              child: MyNetworkImage(imageUrl: company?.logo ?? '', fit: BoxFit.scaleDown),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: colorWhite),
+              child:
+                  MyImage(imageUrl: company?.logo ?? '', fit: BoxFit.scaleDown),
             ),
             SizedBox(height: 10.h),
             Text(company?.name ?? "Company Name",
-                style: smallTitleStyle.copyWith(fontSize: 18, color: colorWhite)),
+                style:
+                    smallTitleStyle.copyWith(fontSize: 18, color: colorWhite)),
             Text(company?.email ?? "Organization",
-                style: appSubTextStyle.copyWith(fontSize: 15, color: colorWhite)),
+                style:
+                    appSubTextStyle.copyWith(fontSize: 15, color: colorWhite)),
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
+import 'package:eservices/widgets/my_network_image.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
@@ -50,19 +50,24 @@ class FloatingCard extends StatelessWidget {
               color: colorWhite,
               borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
               boxShadow: [
-                BoxShadow(color: colorPrimaryLight, offset: const Offset(0, 4), blurRadius: 25),
+                BoxShadow(
+                    color: colorPrimaryLight,
+                    offset: const Offset(0, 4),
+                    blurRadius: 25),
               ]),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(title, style: smallTitleStyle),
               SizedBox(height: 4.h),
-              Text(subTitle, style: appTextStyle.copyWith(color: colorLightGreen)),
+              Text(subTitle,
+                  style: appTextStyle.copyWith(color: colorLightGreen)),
               SizedBox(height: 8.h),
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8), border: Border.all(color: colorLightGrey)),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: colorLightGrey)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -87,8 +92,10 @@ class FloatingCard extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             //padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-                shape: BoxShape.circle, color: colorWhite, border: Border.all(color: colorPrimaryLight)),
-            child: MyNetworkImage(imageUrl: image, fit: BoxFit.fitHeight),
+                shape: BoxShape.circle,
+                color: colorWhite,
+                border: Border.all(color: colorPrimaryLight)),
+            child: MyImage(imageUrl: image, fit: BoxFit.fitHeight),
           ),
         ),
       ],
@@ -105,5 +112,6 @@ class FloatingCard extends StatelessWidget {
     );
   }
 
-  Widget divider() => SizedBox(height: 35.h, child: const VerticalDivider(color: colorLightGrey));
+  Widget divider() => SizedBox(
+      height: 35.h, child: const VerticalDivider(color: colorLightGrey));
 }

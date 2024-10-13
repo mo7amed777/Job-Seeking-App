@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/screens/onboarding_screens/welcome_screen.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/utils/ui_helper.dart';
-import 'package:job_nect/widgets/appbar_back_button.dart';
+import 'package:eservices/screens/onboarding_screens/welcome_screen.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/utils/ui_helper.dart';
+import 'package:eservices/widgets/appbar_back_button.dart';
 
 import '../../controllers/local_text_controller.dart';
 import '../../models/app_text_model.dart';
@@ -72,23 +72,29 @@ class _SelectAccountScreenState extends State<SelectAccountScreen> {
                       borderRadius: BorderRadius.circular(12).r,
                       onTap: () {
                         selectedIndex = index;
-                        accountType = selectedIndex == 0 ? "Employee" : "Recruiter";
+                        accountType =
+                            selectedIndex == 0 ? "Employee" : "Recruiter";
                         setState(() {});
                       },
                       child: Container(
                         padding: const EdgeInsets.all(10).r,
-                        margin: EdgeInsets.only(right: index == 0 ? 8.w : 0, left: index == 1 ? 8.w : 0),
+                        margin: EdgeInsets.only(
+                            right: index == 0 ? 8.w : 0,
+                            left: index == 1 ? 8.w : 0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12).r,
                           border: Border.all(
                               width: selectedIndex == index ? 1.5 : 1,
-                              color: selectedIndex == index ? colorPrimary : colorLightGrey),
+                              color: selectedIndex == index
+                                  ? colorPrimary
+                                  : colorLightGrey),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset(images[index], height: 50.h, width: 50.w),
+                            Image.asset(images[index],
+                                height: 50.h, width: 50.w),
                             SizedBox(height: 10.h),
                             Text(
                               titles[index],
@@ -163,7 +169,8 @@ class _SelectAccountScreenState extends State<SelectAccountScreen> {
                 if (selectedIndex != null) {
                   Get.to(WelcomeScreen(accType: accountType));
                 } else {
-                  UiHelper.showSnackBar(text: "please select account type first", error: true);
+                  UiHelper.showSnackBar(
+                      text: "please select account type first", error: true);
                   //Get.snackbar("Error", "please select account type first");
                 }
               },

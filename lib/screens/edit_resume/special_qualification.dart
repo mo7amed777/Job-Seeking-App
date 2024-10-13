@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/widgets/bordered_container.dart';
-import 'package:job_nect/widgets/chip_text.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/widgets/bordered_container.dart';
+import 'package:eservices/widgets/chip_text.dart';
 
 class SpecialQualification extends StatefulWidget {
   const SpecialQualification({super.key});
@@ -54,8 +54,9 @@ class _SpecialQualificationState extends State<SpecialQualification> {
                   child: ChipText(
                       text: e,
                       color: selected ? colorPrimaryLighter : colorLightGrey,
-                      textStyle:
-                          appTextStyle.copyWith(fontSize: 14, color: selected ? colorPrimary : colorBlack)));
+                      textStyle: appTextStyle.copyWith(
+                          fontSize: 14,
+                          color: selected ? colorPrimary : colorBlack)));
             }).toList(),
           ),
         ),

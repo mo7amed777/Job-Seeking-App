@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart'; // Ensure Get package is imported
-import 'package:job_nect/controllers/notification_controller.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/controllers/notification_controller.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -16,7 +16,6 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
-  
   @override
   void initState() {
     super.initState();
@@ -29,7 +28,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const TextBackButton(text: "Notification"),
-       
       ),
       body: GetBuilder<NotificationController>(builder: (controller) {
         // Assuming controller.notifications[index] contains your data

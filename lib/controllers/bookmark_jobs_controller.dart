@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:job_nect/models/applied_jobs_model.dart';
-import 'package:job_nect/models/bookmark_jobs_model.dart';
-import 'package:job_nect/services/urls.dart';
-import 'package:job_nect/utils/ui_helper.dart';
+import 'package:eservices/models/applied_jobs_model.dart';
+import 'package:eservices/models/bookmark_jobs_model.dart';
+import 'package:eservices/services/urls.dart';
+import 'package:eservices/utils/ui_helper.dart';
 
 import '../services/api_caller.dart';
 

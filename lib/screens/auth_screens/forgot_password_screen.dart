@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/reset_pass_controller.dart';
-import 'package:job_nect/screens/auth_screens/reset_password_screen.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/utils/strings.dart';
-import 'package:job_nect/utils/validator_class.dart';
-import 'package:job_nect/widgets/appbar_back_button.dart';
-import 'package:job_nect/widgets/body_widget.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
+import 'package:eservices/controllers/reset_pass_controller.dart';
+import 'package:eservices/screens/auth_screens/reset_password_screen.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/utils/strings.dart';
+import 'package:eservices/utils/validator_class.dart';
+import 'package:eservices/widgets/appbar_back_button.dart';
+import 'package:eservices/widgets/body_widget.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
 
 import '../../controllers/local_settings_controller.dart';
 import '../../controllers/local_text_controller.dart';
@@ -45,7 +45,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   const AppBarBackButton(),
                   SizedBox(height: 60.h),
                   //SvgPicture.asset(appLogo, color: colorPrimary),
-                  MyNetworkImage(
+                  MyImage(
                       imageUrl:
                           LocalSettingsController.setting?.darkLogo ?? ''),
                   SizedBox(height: 20.h),

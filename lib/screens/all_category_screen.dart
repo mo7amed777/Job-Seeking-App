@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/categories_controller.dart';
-import 'package:job_nect/screens/nav_explore_screen.dart';
-import 'package:job_nect/widgets/category_item_card.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/controllers/categories_controller.dart';
+import 'package:eservices/screens/nav_explore_screen.dart';
+import 'package:eservices/widgets/category_item_card.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 import '../controllers/local_text_controller.dart';
 import '../models/app_text_model.dart';

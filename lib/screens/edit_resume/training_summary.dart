@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/resume_details_controller.dart';
-import 'package:job_nect/models/resume_model.dart';
+import 'package:eservices/controllers/resume_details_controller.dart';
+import 'package:eservices/models/resume_model.dart';
 
 import '../../controllers/edit_resume_controller.dart';
 import '../../controllers/local_text_controller.dart';
@@ -56,10 +56,14 @@ class _TrainingSummaryState extends State<TrainingSummary> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("${terms?.institute ?? "Institute"}: ${training?.institute}",
+                          Text(
+                              "${terms?.institute ?? "Institute"}: ${training?.institute}",
                               style: appTextStyleBlack),
-                          Text("${terms?.topic ?? "Topic"}: ${training?.topics}", style: appTextStyleBlack),
-                          Text("${terms?.location ?? "Location"}: ${training?.location}",
+                          Text(
+                              "${terms?.topic ?? "Topic"}: ${training?.topics}",
+                              style: appTextStyleBlack),
+                          Text(
+                              "${terms?.location ?? "Location"}: ${training?.location}",
                               style: appTextStyleBlack),
                           Text(
                               "${terms?.duration ?? "Duration"}: ${training?.startDate} - ${training?.endDate}",
@@ -69,25 +73,34 @@ class _TrainingSummaryState extends State<TrainingSummary> {
                               Padding(
                                 padding: const EdgeInsets.all(8),
                                 child: InkWell(
-                                  child: const Icon(Icons.edit, color: colorPrimary),
+                                  child: const Icon(Icons.edit,
+                                      color: colorPrimary),
                                   onTap: () {
                                     nameController.text = training?.name ?? '';
-                                    instituteController.text = training?.institute ?? '';
-                                    topicController.text = training?.topics ?? '';
-                                    locationController.text = training?.location ?? '';
+                                    instituteController.text =
+                                        training?.institute ?? '';
+                                    topicController.text =
+                                        training?.topics ?? '';
+                                    locationController.text =
+                                        training?.location ?? '';
                                     durationController.text =
-                                        "${training?.startDate} - ${training?.endDate}" ?? '';
+                                        "${training?.startDate} - ${training?.endDate}" ??
+                                            '';
                                     selectedDateRange = DateTimeRange(
-                                        start: DateTime.parse(training?.startDate ?? ''),
-                                        end: DateTime.parse(training?.endDate ?? ''));
-                                    showAddOrUpdateModal(context, true, training?.id);
+                                        start: DateTime.parse(
+                                            training?.startDate ?? ''),
+                                        end: DateTime.parse(
+                                            training?.endDate ?? ''));
+                                    showAddOrUpdateModal(
+                                        context, true, training?.id);
                                   },
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8),
                                 child: InkWell(
-                                  child: const Icon(Icons.delete, color: colorRed),
+                                  child:
+                                      const Icon(Icons.delete, color: colorRed),
                                   onTap: () async {
                                     deleteExperience(context, training?.id);
                                   },
@@ -182,7 +195,8 @@ class _TrainingSummaryState extends State<TrainingSummary> {
                           : terms?.duration ?? "select duration",
                       suffixIcon: IconButton(
                         onPressed: () {},
-                        icon: SvgPicture.asset(calender, color: colorBlackLight),
+                        icon:
+                            SvgPicture.asset(calender, color: colorBlackLight),
                       ),
                     ),
                   ),
@@ -192,7 +206,9 @@ class _TrainingSummaryState extends State<TrainingSummary> {
                   CustomButton(
                     text: terms?.saveAndContinue ?? "Save & Continue",
                     onTap: () async {
-                      isUpdating ?? false ? await updateTraining(id) : await addTraining();
+                      isUpdating ?? false
+                          ? await updateTraining(id)
+                          : await addTraining();
                     },
                   ),
                 ],
@@ -267,14 +283,17 @@ class _TrainingSummaryState extends State<TrainingSummary> {
           title: const Text("Are you sure to delete?", style: appTitleStyle),
           content: Row(
             children: [
-              Expanded(child: CustomButton(text: terms?.no ?? "No", onTap: () => Get.back())),
+              Expanded(
+                  child: CustomButton(
+                      text: terms?.no ?? "No", onTap: () => Get.back())),
               const SizedBox(width: 16),
               Expanded(
                 child: CustomButton(
                   text: terms?.yes ?? "Yes",
                   onTap: () async {
                     UiHelper.loadingIndicator();
-                    final response = await Get.find<EditResumeController>().deleteTraining(id: id);
+                    final response = await Get.find<EditResumeController>()
+                        .deleteTraining(id: id);
                     Get.back();
                     Get.back();
                     if (response) {
@@ -282,7 +301,8 @@ class _TrainingSummaryState extends State<TrainingSummary> {
                       //controller.removeExp(exp?.id);
                       UiHelper.showSnackBar(text: "Deleted Successfully");
                     } else {
-                      UiHelper.showSnackBar(text: "Something went wrong", error: true);
+                      UiHelper.showSnackBar(
+                          text: "Something went wrong", error: true);
                     }
                   },
                 ),

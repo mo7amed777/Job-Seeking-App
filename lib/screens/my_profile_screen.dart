@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/app_text_controller.dart';
-import 'package:job_nect/controllers/auth_controller.dart';
-import 'package:job_nect/controllers/designation_controller.dart';
-import 'package:job_nect/controllers/language_controller.dart';
-import 'package:job_nect/controllers/update_image_controller.dart';
-import 'package:job_nect/controllers/update_profile_controller.dart';
-import 'package:job_nect/models/designation_model.dart';
-import 'package:job_nect/models/languages_model.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/date_time_utils.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/utils/strings.dart';
-import 'package:job_nect/utils/ui_helper.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/custom_button.dart';
-import 'package:job_nect/widgets/input_field_white_new.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/controllers/app_text_controller.dart';
+import 'package:eservices/controllers/auth_controller.dart';
+import 'package:eservices/controllers/designation_controller.dart';
+import 'package:eservices/controllers/language_controller.dart';
+import 'package:eservices/controllers/update_image_controller.dart';
+import 'package:eservices/controllers/update_profile_controller.dart';
+import 'package:eservices/models/designation_model.dart';
+import 'package:eservices/models/languages_model.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/date_time_utils.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/utils/strings.dart';
+import 'package:eservices/utils/ui_helper.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/custom_button.dart';
+import 'package:eservices/widgets/input_field_white_new.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 import '../controllers/local_text_controller.dart';
 import '../models/app_text_model.dart';
@@ -305,7 +305,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 border: Border.all(color: colorPrimaryLight)),
             child: controller.profileImage != null
                 ? Image.file(controller.profileImage!, fit: BoxFit.cover)
-                : MyNetworkImage(
+                : MyImage(
                     imageUrl: user?.profilePhoto ?? '', fit: BoxFit.cover),
           ),
           Positioned(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
+import 'package:eservices/widgets/my_network_image.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
@@ -35,7 +35,7 @@ class CompanyItemCard extends StatelessWidget {
           children: [
             Text(name, style: appTitleStyle.copyWith(fontSize: 14)),
             SizedBox(height: 5.h),
-            MyNetworkImage(imageUrl: logo, height: 30.h),
+            MyImage(imageUrl: logo, height: 30.h),
             //Text(subTitle, style: appSubTextStyle.copyWith(fontSize: 12)),
           ],
         ),

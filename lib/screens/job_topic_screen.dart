@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/screens/bottom_nav_screen.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/utils/strings.dart';
-import 'package:job_nect/widgets/appbar_back_button.dart';
-import 'package:job_nect/widgets/custom_button.dart';
+import 'package:eservices/screens/bottom_nav_screen.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/utils/strings.dart';
+import 'package:eservices/widgets/appbar_back_button.dart';
+import 'package:eservices/widgets/custom_button.dart';
 
 import '../models/job_topic_model.dart';
 import '../utils/app_text_styles.dart';
@@ -45,7 +45,8 @@ class _JobTopicScreenState extends State<JobTopicScreen> {
                 SizedBox(width: 10),
                 Padding(
                   padding: EdgeInsets.only(top: 6),
-                  child: Text(jobTopicTitle, textAlign: TextAlign.center, style: mediumTitleStyle),
+                  child: Text(jobTopicTitle,
+                      textAlign: TextAlign.center, style: mediumTitleStyle),
                 ),
               ],
             ),
@@ -89,15 +90,17 @@ class _JobTopicScreenState extends State<JobTopicScreen> {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10).r,
-                border:
-                    Border.all(width: selected ? 1.3 : 1, color: selected ? colorPrimary : colorLightGrey)),
+                border: Border.all(
+                    width: selected ? 1.3 : 1,
+                    color: selected ? colorPrimary : colorLightGrey)),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(jobTopicList[index].icon,
                     //color: selected ? colorPrimary : colorBlack,
-                    colorFilter: ColorFilter.mode(selected ? colorPrimary : colorBlack, BlendMode.srcIn)),
+                    colorFilter: ColorFilter.mode(
+                        selected ? colorPrimary : colorBlack, BlendMode.srcIn)),
                 SizedBox(height: 8.h),
                 Text(jobTopicList[index].title, style: appSubTextStyle),
               ],
@@ -111,7 +114,8 @@ class _JobTopicScreenState extends State<JobTopicScreen> {
   Padding bottomNavBar() {
     return Padding(
       padding: const EdgeInsets.all(16),
-      child: CustomButton(onTap: () => Get.offAll(const BottomNavScreen()), text: "Find Jobs"),
+      child: CustomButton(
+          onTap: () => Get.offAll(const BottomNavScreen()), text: "Find Jobs"),
     );
   }
 }

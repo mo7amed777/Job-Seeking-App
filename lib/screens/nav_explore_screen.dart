@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/screens/filter_screen.dart';
+import 'package:eservices/screens/filter_screen.dart';
 import '../controllers/bottom_nav_controller.dart';
 import '../controllers/filter_jobs_controller.dart';
 import '../controllers/local_text_controller.dart';
@@ -11,7 +11,7 @@ import '../utils/app_text_styles.dart';
 import '../widgets/center_progress_indicator.dart';
 import '../widgets/job_card_detailed.dart';
 import '../widgets/search_text_field.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 class NavExploreScreen extends StatefulWidget {
   final String? query;

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/company_details_controller.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/utils/strings.dart';
+import 'package:eservices/controllers/company_details_controller.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/utils/strings.dart';
 
 import '../../controllers/local_text_controller.dart';
 import '../../models/app_text_model.dart';
@@ -49,7 +49,8 @@ class CompanyOverview extends StatelessWidget {
     return Container(
       height: 150.h,
       width: MediaQuery.sizeOf(context).width,
-      decoration: BoxDecoration(color: colorBlack, borderRadius: BorderRadius.circular(15)),
+      decoration: BoxDecoration(
+          color: colorBlack, borderRadius: BorderRadius.circular(15)),
       child: InkWell(
         borderRadius: BorderRadius.circular(50),
         onTap: () {},

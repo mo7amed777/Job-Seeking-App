@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:job_nect/controllers/skills_controller.dart';
+import 'package:eservices/controllers/skills_controller.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/screens/nav_explore_screen.dart';
+import 'package:eservices/screens/nav_explore_screen.dart';
 
 import '../controllers/categories_filter_controller.dart';
 import '../controllers/job_types_filter_controller.dart';
@@ -27,7 +27,6 @@ class FilterScreen extends StatelessWidget {
     // Retrieve arguments passed from NavExploreScreen
     final Map<String, dynamic>? arguments = Get.arguments;
     String? selectedCategoryId = arguments?['categoryId'];
-
 
     // Set the selected category in the controller if it exists
     if (selectedCategoryId != null) {

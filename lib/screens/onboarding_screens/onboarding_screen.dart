@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/local_text_controller.dart';
-import 'package:job_nect/controllers/slider_controller.dart';
-import 'package:job_nect/models/app_text_model.dart';
-import 'package:job_nect/screens/onboarding_screens/select_account_screen.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
-import 'package:job_nect/screens/onboarding_screens/welcome_screen.dart';
+import 'package:eservices/controllers/local_text_controller.dart';
+import 'package:eservices/controllers/slider_controller.dart';
+import 'package:eservices/models/app_text_model.dart';
+import 'package:eservices/screens/onboarding_screens/select_account_screen.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/widgets/my_network_image.dart';
+import 'package:eservices/screens/onboarding_screens/welcome_screen.dart';
 import '../../widgets/custom_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -55,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       // Image.asset(
                       //   contents[i].image,
                       // ),
-                      MyNetworkImage(
+                      MyImage(
                         imageUrl: slide?.image ?? '',
                         height: 250.h,
                         width: mq.width / 1.1,

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:job_nect/screens/onboarding_screens/splash_screen.dart';
+import 'package:eservices/screens/onboarding_screens/splash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/user.dart';

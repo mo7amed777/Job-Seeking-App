@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/widgets/custom_drop_down.dart';
-import 'package:job_nect/widgets/titled_input_field.dart';
+import 'package:eservices/widgets/custom_drop_down.dart';
+import 'package:eservices/widgets/titled_input_field.dart';
 
 import '../../controllers/edit_resume_controller.dart';
 import '../../controllers/education_levels_controller.dart';
@@ -38,8 +38,10 @@ class _AcademicQualificationState extends State<AcademicQualification> {
   TextEditingController durationController = TextEditingController();
   DateTimeRange? selectedDateRange;
   String selectedEducationLevel = educationLevels.first;
-  static EducationLevelsController educationLevelController = Get.find<EducationLevelsController>();
-  static List<String> educationLevels = educationLevelController.educationLevels ?? [];
+  static EducationLevelsController educationLevelController =
+      Get.find<EducationLevelsController>();
+  static List<String> educationLevels =
+      educationLevelController.educationLevels ?? [];
   @override
   Widget build(BuildContext context) {
     //Resume? resume = Get.find<ResumeDetailsController>().resume;
@@ -63,49 +65,72 @@ class _AcademicQualificationState extends State<AcademicQualification> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("${terms?.institute ?? "Institute"}: ${education?.institute}",
+                            Text(
+                                "${terms?.institute ?? "Institute"}: ${education?.institute}",
                                 style: appTextStyleBlack),
-                            Text("${terms?.major ?? "Major"}: ${education?.major}", style: appTextStyleBlack),
-                            Text("${terms?.exam ?? "Exam"}: ${education?.exam}", style: appTextStyleBlack),
-                            Text("${terms?.result ?? "Result"}: ${education?.result}",
+                            Text(
+                                "${terms?.major ?? "Major"}: ${education?.major}",
                                 style: appTextStyleBlack),
-                            Text("${terms?.passingYear ?? "Passing Year"}: ${education?.endDate}",
+                            Text("${terms?.exam ?? "Exam"}: ${education?.exam}",
+                                style: appTextStyleBlack),
+                            Text(
+                                "${terms?.result ?? "Result"}: ${education?.result}",
+                                style: appTextStyleBlack),
+                            Text(
+                                "${terms?.passingYear ?? "Passing Year"}: ${education?.endDate}",
                                 style: appTextStyleBlack),
                             Row(
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8),
                                   child: InkWell(
-                                    child: const Icon(Icons.edit, color: colorPrimary),
+                                    child: const Icon(Icons.edit,
+                                        color: colorPrimary),
                                     onTap: () {
-                                      selectedEducationLevel = education?.level ?? '';
-                                      instituteController.text = education?.institute ?? '';
-                                      majorController.text = education?.major ?? '';
-                                      examController.text = education?.exam ?? '';
-                                      resultController.text = education?.result ?? '';
+                                      selectedEducationLevel =
+                                          education?.level ?? '';
+                                      instituteController.text =
+                                          education?.institute ?? '';
+                                      majorController.text =
+                                          education?.major ?? '';
+                                      examController.text =
+                                          education?.exam ?? '';
+                                      resultController.text =
+                                          education?.result ?? '';
                                       durationController.text =
-                                          "${education?.startDate} - ${education?.endDate}" ?? '';
+                                          "${education?.startDate} - ${education?.endDate}" ??
+                                              '';
                                       selectedDateRange = DateTimeRange(
-                                          start: DateTime.parse(education?.startDate ?? ''),
-                                          end: DateTime.parse(education?.endDate ?? ''));
-                                      showAddOrUpdateModal(context, true, education?.id);
+                                          start: DateTime.parse(
+                                              education?.startDate ?? ''),
+                                          end: DateTime.parse(
+                                              education?.endDate ?? ''));
+                                      showAddOrUpdateModal(
+                                          context, true, education?.id);
                                     },
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8),
                                   child: InkWell(
-                                    child: const Icon(Icons.delete, color: colorRed),
+                                    child: const Icon(Icons.delete,
+                                        color: colorRed),
                                     onTap: () async {
                                       UiHelper.loadingIndicator();
-                                      final response = await Get.find<EditResumeController>()
-                                          .deleteEducation(id: education?.id);
+                                      final response =
+                                          await Get.find<EditResumeController>()
+                                              .deleteEducation(
+                                                  id: education?.id);
                                       Get.back();
                                       if (response) {
-                                        Get.find<ResumeDetailsController>().getResumeDetails();
-                                        UiHelper.showSnackBar(text: "Deleted Successfully");
+                                        Get.find<ResumeDetailsController>()
+                                            .getResumeDetails();
+                                        UiHelper.showSnackBar(
+                                            text: "Deleted Successfully");
                                       } else {
-                                        UiHelper.showSnackBar(text: "Something went wrong", error: true);
+                                        UiHelper.showSnackBar(
+                                            text: "Something went wrong",
+                                            error: true);
                                       }
                                     },
                                   ),
@@ -151,7 +176,8 @@ class _AcademicQualificationState extends State<AcademicQualification> {
                       Text(
                           isUpdating ?? false
                               ? terms?.editQualification ?? "Edit Qualification"
-                              : terms?.addNewQualification ?? "Add New Qualification",
+                              : terms?.addNewQualification ??
+                                  "Add New Qualification",
                           style: appTitleStyle),
                       SizedBox(height: 10.h),
                       CustomDropDown(
@@ -210,7 +236,8 @@ class _AcademicQualificationState extends State<AcademicQualification> {
                               : terms?.duration ?? "select duration",
                           suffixIcon: IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset(calender, color: colorBlackLight),
+                            icon: SvgPicture.asset(calender,
+                                color: colorBlackLight),
                           ),
                         ),
                       ),
@@ -220,7 +247,9 @@ class _AcademicQualificationState extends State<AcademicQualification> {
                       CustomButton(
                         text: terms?.saveAndContinue ?? "Save & Continue",
                         onTap: () async {
-                          isUpdating ?? false ? await updateEducation(id) : await addEducation();
+                          isUpdating ?? false
+                              ? await updateEducation(id)
+                              : await addEducation();
                         },
                       ),
                     ],

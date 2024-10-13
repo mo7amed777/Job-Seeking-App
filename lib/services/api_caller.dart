@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:http/http.dart';
-import 'package:job_nect/utils/ui_helper.dart';
+import 'package:eservices/utils/ui_helper.dart';
 
 import '../controllers/auth_controller.dart';
 import '../models/network_response.dart';

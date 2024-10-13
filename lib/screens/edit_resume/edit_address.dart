@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/utils/validator_class.dart';
-import 'package:job_nect/widgets/titled_input_field.dart';
+import 'package:eservices/utils/validator_class.dart';
+import 'package:eservices/widgets/titled_input_field.dart';
 
 import '../../controllers/edit_resume_controller.dart';
 import '../../controllers/local_text_controller.dart';
@@ -76,7 +76,8 @@ class _EditAddressState extends State<EditAddress> {
         onTap: () async {
           if (formKey.currentState!.validate()) {
             UiHelper.loadingIndicator();
-            final response = await Get.find<EditResumeController>().editAddressDetails(
+            final response =
+                await Get.find<EditResumeController>().editAddressDetails(
               presentAddress: presentAddController.text.trim(),
               permanentAddress: permanentAddController.text.trim(),
             );

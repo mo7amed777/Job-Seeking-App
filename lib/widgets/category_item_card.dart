@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
+import 'package:eservices/widgets/my_network_image.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
@@ -36,7 +36,7 @@ class CategoryItemCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MyNetworkImage(imageUrl: iconImage, height: 30.h),
+            MyImage(imageUrl: iconImage, height: 30.h),
             SizedBox(height: 5.h),
             Text(title, style: appTitleStyle.copyWith(fontSize: 14)),
             //Text(subTitle, style: appSubTextStyle.copyWith(fontSize: 12)),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/auth_controller.dart';
-import 'package:job_nect/utils/ui_helper.dart';
+import 'package:eservices/controllers/auth_controller.dart';
+import 'package:eservices/utils/ui_helper.dart';
 
 import '../models/user.dart';
 import '../services/api_caller.dart';

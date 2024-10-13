@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/bookmark_jobs_controller.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/job_card_short.dart';
-import 'package:job_nect/widgets/text_back_button.dart';
+import 'package:eservices/controllers/bookmark_jobs_controller.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/job_card_short.dart';
+import 'package:eservices/widgets/text_back_button.dart';
 
 class BookmarkJobsScreen extends StatefulWidget {
   const BookmarkJobsScreen({super.key});

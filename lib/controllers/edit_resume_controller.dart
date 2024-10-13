@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:job_nect/services/api_caller.dart';
-import 'package:job_nect/services/urls.dart';
+import 'package:eservices/services/api_caller.dart';
+import 'package:eservices/services/urls.dart';
 
 class EditResumeController extends GetxController {
   Future<bool> editPersonalDetails(
@@ -13,7 +13,8 @@ class EditResumeController extends GetxController {
       required gender,
       required maritalStatus,
       required nationality}) async {
-    final response = await ApiCaller().postRequest(Urls.editResumePersonalInfo, body: {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumePersonalInfo, body: {
       'name': name,
       'email': email,
       'phone': phone,
@@ -31,8 +32,10 @@ class EditResumeController extends GetxController {
     }
   }
 
-  Future<bool> editAddressDetails({required presentAddress, required permanentAddress}) async {
-    final response = await ApiCaller().postRequest(Urls.editResumeAddressInfo, body: {
+  Future<bool> editAddressDetails(
+      {required presentAddress, required permanentAddress}) async {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumeAddressInfo, body: {
       'present_address': presentAddress,
       'permanent_address': permanentAddress,
     });
@@ -51,7 +54,8 @@ class EditResumeController extends GetxController {
     required jobLevel,
     required jobType,
   }) async {
-    final response = await ApiCaller().postRequest(Urls.editResumeCareerInfo, body: {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumeCareerInfo, body: {
       'career_objective': careerObjective,
       'career_summary': careerSummary,
       'present_salary': presentSalary,
@@ -73,7 +77,8 @@ class EditResumeController extends GetxController {
       required startDate,
       required endDate,
       required address}) async {
-    final response = await ApiCaller().postRequest(Urls.editResumeAddExperience, body: {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumeAddExperience, body: {
       'business': companyName,
       'designation': designation,
       'start_date': startDate,
@@ -97,7 +102,8 @@ class EditResumeController extends GetxController {
       required startDate,
       required endDate,
       required address}) async {
-    final response = await ApiCaller().putRequest(Urls.editResumeUpdateExperience, body: {
+    final response =
+        await ApiCaller().putRequest(Urls.editResumeUpdateExperience, body: {
       'id': id,
       'business': companyName,
       'designation': designation,
@@ -115,7 +121,8 @@ class EditResumeController extends GetxController {
   }
 
   Future<bool> deleteExperience({required id}) async {
-    final response = await ApiCaller().deleteRequest(Urls.editResumeDeleteExperience(id));
+    final response =
+        await ApiCaller().deleteRequest(Urls.editResumeDeleteExperience(id));
     if (response.isSuccess) {
       return true;
     } else {
@@ -132,7 +139,8 @@ class EditResumeController extends GetxController {
     required startDate,
     required endDate,
   }) async {
-    final response = await ApiCaller().postRequest(Urls.editResumeAddEducation, body: {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumeAddEducation, body: {
       'level': level,
       'exam': exam,
       'major': major,
@@ -158,7 +166,8 @@ class EditResumeController extends GetxController {
     required startDate,
     required endDate,
   }) async {
-    final response = await ApiCaller().putRequest(Urls.editResumeUpdateEducation, body: {
+    final response =
+        await ApiCaller().putRequest(Urls.editResumeUpdateEducation, body: {
       'id': id,
       'level': level,
       'exam': exam,
@@ -176,7 +185,8 @@ class EditResumeController extends GetxController {
   }
 
   Future<bool> deleteEducation({required id}) async {
-    final response = await ApiCaller().deleteRequest(Urls.editResumeDeleteEducation(id));
+    final response =
+        await ApiCaller().deleteRequest(Urls.editResumeDeleteEducation(id));
     if (response.isSuccess) {
       return true;
     } else {
@@ -192,7 +202,8 @@ class EditResumeController extends GetxController {
     required startDate,
     required endDate,
   }) async {
-    final response = await ApiCaller().postRequest(Urls.editResumeAddTraining, body: {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumeAddTraining, body: {
       "name": name,
       "topics": topics,
       "institute": institute,
@@ -216,7 +227,8 @@ class EditResumeController extends GetxController {
     required startDate,
     required endDate,
   }) async {
-    final response = await ApiCaller().putRequest(Urls.editResumeUpdateTraining, body: {
+    final response =
+        await ApiCaller().putRequest(Urls.editResumeUpdateTraining, body: {
       "id": id,
       "name": name,
       "topics": topics,
@@ -233,7 +245,8 @@ class EditResumeController extends GetxController {
   }
 
   Future<bool> deleteTraining({required id}) async {
-    final response = await ApiCaller().deleteRequest(Urls.editResumeDeleteTraining(id));
+    final response =
+        await ApiCaller().deleteRequest(Urls.editResumeDeleteTraining(id));
     if (response.isSuccess) {
       return true;
     } else {
@@ -247,7 +260,8 @@ class EditResumeController extends GetxController {
     required writing,
     required speaking,
   }) async {
-    final response = await ApiCaller().postRequest(Urls.editResumeAddLanguage, body: {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumeAddLanguage, body: {
       "name": name,
       "reading": reading,
       "writing": writing,
@@ -267,7 +281,8 @@ class EditResumeController extends GetxController {
     required writing,
     required speaking,
   }) async {
-    final response = await ApiCaller().putRequest(Urls.editResumeUpdateLanguage, body: {
+    final response =
+        await ApiCaller().putRequest(Urls.editResumeUpdateLanguage, body: {
       "id": id,
       "name": name,
       "reading": reading,
@@ -282,7 +297,8 @@ class EditResumeController extends GetxController {
   }
 
   Future<bool> deleteLanguage({required id}) async {
-    final response = await ApiCaller().deleteRequest(Urls.editResumeDeleteLanguage(id));
+    final response =
+        await ApiCaller().deleteRequest(Urls.editResumeDeleteLanguage(id));
     if (response.isSuccess) {
       return true;
     } else {
@@ -299,7 +315,8 @@ class EditResumeController extends GetxController {
     required phone,
     required relation,
   }) async {
-    final response = await ApiCaller().postRequest(Urls.editResumeAddReference, body: {
+    final response =
+        await ApiCaller().postRequest(Urls.editResumeAddReference, body: {
       "name": name,
       "organization": organization,
       "designation": designation,
@@ -325,7 +342,8 @@ class EditResumeController extends GetxController {
     required phone,
     required relation,
   }) async {
-    final response = await ApiCaller().putRequest(Urls.editResumeUpdateReference, body: {
+    final response =
+        await ApiCaller().putRequest(Urls.editResumeUpdateReference, body: {
       "id": id,
       "name": name,
       "organization": organization,
@@ -343,7 +361,8 @@ class EditResumeController extends GetxController {
   }
 
   Future<bool> deleteReference({required id}) async {
-    final response = await ApiCaller().deleteRequest(Urls.editResumeDeleteReference(id));
+    final response =
+        await ApiCaller().deleteRequest(Urls.editResumeDeleteReference(id));
     if (response.isSuccess) {
       return true;
     } else {

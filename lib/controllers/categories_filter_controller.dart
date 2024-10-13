@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:job_nect/models/categories_filter_model.dart';
-import 'package:job_nect/services/urls.dart';
+import 'package:eservices/models/categories_filter_model.dart';
+import 'package:eservices/services/urls.dart';
 import '../services/api_caller.dart';
 
 class CategoriesFilterController extends GetxController {
@@ -26,9 +26,7 @@ class CategoriesFilterController extends GetxController {
     if (response.isSuccess) {
       categoriesFilterModel.value =
           CategoriesFilterModel.fromJson(response.responseData);
-
-
-    } 
+    }
 
     loading.value = false;
   }

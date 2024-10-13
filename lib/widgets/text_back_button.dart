@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/utils/image_paths.dart';
+import 'package:eservices/utils/image_paths.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
@@ -29,7 +29,10 @@ class TextBackButton extends StatelessWidget {
       //   size: 20,
       // ),
       icon: SvgPicture.asset(arrowBack, color: white ? colorWhite : colorBlack),
-      label: Text(text, style: white ? smallTitleStyle.copyWith(color: colorWhite) : smallTitleStyle),
+      label: Text(text,
+          style: white
+              ? smallTitleStyle.copyWith(color: colorWhite)
+              : smallTitleStyle),
     );
   }
 }

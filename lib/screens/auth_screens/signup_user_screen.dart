@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/signup_controller.dart';
-import 'package:job_nect/screens/auth_screens/verify_otp_screen.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/utils/strings.dart';
-import 'package:job_nect/utils/ui_helper.dart';
-import 'package:job_nect/utils/validator_class.dart';
-import 'package:job_nect/widgets/appbar_back_button.dart';
-import 'package:job_nect/widgets/body_widget.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
+import 'package:eservices/controllers/signup_controller.dart';
+import 'package:eservices/screens/auth_screens/verify_otp_screen.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/utils/strings.dart';
+import 'package:eservices/utils/ui_helper.dart';
+import 'package:eservices/utils/validator_class.dart';
+import 'package:eservices/widgets/appbar_back_button.dart';
+import 'package:eservices/widgets/body_widget.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
 
 import '../../controllers/local_settings_controller.dart';
 import '../../controllers/local_text_controller.dart';
@@ -18,7 +18,7 @@ import '../../models/app_text_model.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/input_field_green_new.dart';
 import '../../widgets/my_network_image.dart';
-import 'package:job_nect/screens/auth_screens/login_screen.dart';
+import 'package:eservices/screens/auth_screens/login_screen.dart';
 
 class SignupUserScreen extends StatefulWidget {
   const SignupUserScreen({super.key});
@@ -47,7 +47,7 @@ class _SignupUserScreenState extends State<SignupUserScreen> {
                   children: [
                     const AppBarBackButton(),
                     SizedBox(height: 50.h),
-                    MyNetworkImage(
+                    MyImage(
                         imageUrl:
                             LocalSettingsController.setting?.darkLogo ?? ''),
                     SizedBox(height: 20.h),

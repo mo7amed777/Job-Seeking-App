@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/strings.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/strings.dart';
 
 import '../utils/app_colors.dart';
 
@@ -14,7 +14,13 @@ class BorderedContainer extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
 
   const BorderedContainer(
-      {super.key, this.child, this.title, this.body, this.height, this.width, this.padding});
+      {super.key,
+      this.child,
+      this.title,
+      this.body,
+      this.height,
+      this.width,
+      this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,8 @@ class BorderedContainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title ?? '',
-                  style: smallTitleStyle.copyWith(fontWeight: FontWeight.bold, fontFamily: fontMedium)),
+                  style: smallTitleStyle.copyWith(
+                      fontWeight: FontWeight.bold, fontFamily: fontMedium)),
               const Divider(color: colorLightGrey, thickness: 1.5),
               SizedBox(height: 4.h),
               body ?? const SizedBox(),

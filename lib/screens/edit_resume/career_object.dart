@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/job_levels_controller.dart';
-import 'package:job_nect/controllers/job_types_controller.dart';
-import 'package:job_nect/utils/validator_class.dart';
-import 'package:job_nect/widgets/titled_input_field.dart';
+import 'package:eservices/controllers/job_levels_controller.dart';
+import 'package:eservices/controllers/job_types_controller.dart';
+import 'package:eservices/utils/validator_class.dart';
+import 'package:eservices/widgets/titled_input_field.dart';
 
 import '../../controllers/edit_resume_controller.dart';
 import '../../controllers/local_text_controller.dart';
@@ -30,7 +30,8 @@ class _CareerObjectState extends State<CareerObject> {
   TextEditingController careerSummaryController = TextEditingController();
   TextEditingController presentSalaryController = TextEditingController();
   TextEditingController expectedSalaryController = TextEditingController();
-  static List<String> jobLevels = Get.find<JobLevelsController>().jobLevels ?? [];
+  static List<String> jobLevels =
+      Get.find<JobLevelsController>().jobLevels ?? [];
   String selectedJobLevel = jobLevels.first;
   static List<String> jobTypes = Get.find<JobTypesController>().jobTypes ?? [];
   String selectedJobType = jobTypes.first;
@@ -119,7 +120,8 @@ class _CareerObjectState extends State<CareerObject> {
         onTap: () async {
           if (formKey.currentState!.validate()) {
             UiHelper.loadingIndicator();
-            final response = await Get.find<EditResumeController>().editCareerInfo(
+            final response =
+                await Get.find<EditResumeController>().editCareerInfo(
               careerObjective: careerObjectiveController.text.trim(),
               careerSummary: careerSummaryController.text.trim(),
               presentSalary: presentSalaryController.text.trim(),

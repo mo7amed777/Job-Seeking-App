@@ -1,4 +1,4 @@
-import 'package:job_nect/models/designation_model.dart';
+import 'package:eservices/models/designation_model.dart';
 
 class User {
   int? userId;
@@ -37,7 +37,9 @@ class User {
     about = json['about'];
     profilePhoto = json['profile_photo'];
     coverImage = json['cover_image'];
-    designation = json['designation'] != null ? Designation.fromJson(json['designation']) : null;
+    designation = json['designation'] != null
+        ? Designation.fromJson(json['designation'])
+        : null;
   }
 
   Map<String, dynamic> toJson() {

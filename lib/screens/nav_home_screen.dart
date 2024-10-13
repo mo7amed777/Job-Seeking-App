@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/auth_controller.dart';
-import 'package:job_nect/controllers/categories_controller.dart';
-import 'package:job_nect/controllers/companies_controller.dart';
-import 'package:job_nect/controllers/latest_jobs_controller.dart';
-import 'package:job_nect/controllers/popular_jobs_controller.dart';
-import 'package:job_nect/models/job_model.dart';
-import 'package:job_nect/models/user.dart';
-import 'package:job_nect/screens/all_category_screen.dart';
-import 'package:job_nect/screens/all_company_screen.dart';
-import 'package:job_nect/screens/nav_explore_screen.dart';
-import 'package:job_nect/screens/notification_screen.dart';
-import 'package:job_nect/utils/app_colors.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/category_item_card.dart';
-import 'package:job_nect/widgets/company_item_card.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/job_card_detailed.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
+import 'package:eservices/controllers/auth_controller.dart';
+import 'package:eservices/controllers/categories_controller.dart';
+import 'package:eservices/controllers/companies_controller.dart';
+import 'package:eservices/controllers/latest_jobs_controller.dart';
+import 'package:eservices/controllers/popular_jobs_controller.dart';
+import 'package:eservices/models/job_model.dart';
+import 'package:eservices/models/user.dart';
+import 'package:eservices/screens/all_category_screen.dart';
+import 'package:eservices/screens/all_company_screen.dart';
+import 'package:eservices/screens/nav_explore_screen.dart';
+import 'package:eservices/screens/notification_screen.dart';
+import 'package:eservices/utils/app_colors.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/category_item_card.dart';
+import 'package:eservices/widgets/company_item_card.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/job_card_detailed.dart';
+import 'package:eservices/widgets/my_network_image.dart';
 
 import '../controllers/local_text_controller.dart';
 import '../models/app_text_model.dart';
@@ -123,7 +123,7 @@ class _NavHomeScreenState extends State<NavHomeScreen> {
                 width: 48.w,
                 clipBehavior: Clip.antiAlias,
                 decoration: const BoxDecoration(shape: BoxShape.circle),
-                child: MyNetworkImage(
+                child: MyImage(
                   imageUrl: user?.profilePhoto ?? '',
                   fit: BoxFit.cover,
                 ),

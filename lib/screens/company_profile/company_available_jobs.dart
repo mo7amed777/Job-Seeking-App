@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/company_jobs_controller.dart';
-import 'package:job_nect/utils/app_text_styles.dart';
-import 'package:job_nect/utils/image_paths.dart';
-import 'package:job_nect/widgets/center_progress_indicator.dart';
-import 'package:job_nect/widgets/job_card_detailed.dart';
+import 'package:eservices/controllers/company_jobs_controller.dart';
+import 'package:eservices/utils/app_text_styles.dart';
+import 'package:eservices/utils/image_paths.dart';
+import 'package:eservices/widgets/center_progress_indicator.dart';
+import 'package:eservices/widgets/job_card_detailed.dart';
 
 import '../../controllers/local_text_controller.dart';
 import '../../models/app_text_model.dart';
@@ -23,7 +23,8 @@ class CompanyAvailableJobs extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(terms?.availableVacancy ?? "Available Vacancy", style: smallTitleStyle),
+          Text(terms?.availableVacancy ?? "Available Vacancy",
+              style: smallTitleStyle),
           GetBuilder<CompanyJobsController>(builder: (controller) {
             return Visibility(
               visible: controller.loading == false,

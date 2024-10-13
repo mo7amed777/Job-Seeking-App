@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/utils/image_paths.dart';
+import 'package:eservices/utils/image_paths.dart';
 
 import '../utils/app_colors.dart';
 
@@ -31,7 +31,8 @@ class BodyWidget extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: IconButton(
                     onPressed: () => Get.back(),
-                    icon: Icon(Icons.arrow_back_ios_new, color: backButtonColor ?? colorBlack),
+                    icon: Icon(Icons.arrow_back_ios_new,
+                        color: backButtonColor ?? colorBlack),
                   ),
                 ),
               )

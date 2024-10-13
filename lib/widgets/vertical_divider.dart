@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:job_nect/utils/app_colors.dart';
+import 'package:eservices/utils/app_colors.dart';
 
 class VerticalDivider extends StatelessWidget {
   final double? thickness;

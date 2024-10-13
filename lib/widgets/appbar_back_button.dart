@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/utils/image_paths.dart';
+import 'package:eservices/utils/image_paths.dart';
 
 import '../utils/app_colors.dart';
 

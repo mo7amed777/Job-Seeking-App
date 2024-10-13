@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:job_nect/controllers/auth_controller.dart';
-import 'package:job_nect/screens/bottom_nav_screen.dart';
-import 'package:job_nect/screens/onboarding_screens/onboarding_screen.dart';
-import 'package:job_nect/widgets/my_network_image.dart';
-
+import 'package:eservices/controllers/auth_controller.dart';
+import 'package:eservices/screens/bottom_nav_screen.dart';
+import 'package:eservices/screens/onboarding_screens/onboarding_screen.dart';
+import 'package:eservices/widgets/my_network_image.dart';
 import '../../controllers/app_text_controller.dart';
-import '../../controllers/language_controller.dart';
 import '../../controllers/local_settings_controller.dart';
 import '../../controllers/local_text_controller.dart';
 import '../../controllers/setting_controller.dart';
@@ -71,9 +69,10 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: colorPrimary,
       body: loading
           ? const CupertinoActivityIndicator()
-          : Center(
-              child: MyNetworkImage(
-                  imageUrl: LocalSettingsController.setting?.lightLogo ?? ''),
+          : const Center(
+              child: MyImage(
+                imageUrl: 'assets/images/app_icon.png',
+              ), //LocalSettingsController.setting?.lightLogo ?? ''),
             ),
     );
   }
