@@ -1,0 +1,8 @@
+1. select account screen hide, welcome page guest login hide. 
+2. notification 
+3. job category, recomended jobs, cv menu scroll
+4. recomended to fetaured job list
+
+5. filtering
+6. explore/search/filtering use in same explore file. 
+7. show companies in homepage & show all company page
